@@ -20,7 +20,6 @@ export const TodoList: React.FC<TodoListProps> = ({
   updatingIds,
   onToggle,
   onDelete,
-  isLoading,
 }) => {
   const visibleTodos = todos.filter(todo => {
     switch (filter) {
@@ -35,8 +34,6 @@ export const TodoList: React.FC<TodoListProps> = ({
 
   return (
     <section className="todoapp__main" data-cy="TodoList">
-      {isLoading && <div className="loader" data-cy="loader" />}
-
       {visibleTodos.map(todo => (
         <TodoItem
           key={todo.id}
